@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+<!--  -->
+{% block styles %}
+<link href="/dialog_error.css" rel="stylesheet" />
+{% endblock %}
+
+<!--  -->
+{% block page_content %}
+<div class="panel">
+
+<div class="dialog">
+    <div class="content">
+        <span
+            >确认删除“{{record.stu_name}}”在“{{record.cou_term}}”的课程({{record.cou_name}})?</span
+        >
+    </div>
+    <div class="footer">
+        <div class="btn">
+            <form
+                action="/action/course-select/delete/{{record.stu_sn}}/{{record.cou_sn}}"
+                method="post"
+            >
+                <input type="submit" value="删除" />
+            </form>
+        </div>
+        <div class="btn">
+            <a href="/course-select">返回</a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

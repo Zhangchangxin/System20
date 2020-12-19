@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+<!--  -->
+{% block styles %} {% endblock %}
+
+<!--  -->
+{% block page_content %}
+<div class="paper">
+    <form action="/action/course-select/edit/{{stu_sn}}/{{cou_sn}}" method="post">
+        选课：<input type="text" name="course" value="{{cou_name}}" />
+        <input type="submit" value="修改" />
+    </form>
+    <hr />
+    <a href="/course-select"> 回到学生选课列表 </a>
+</div>
+{% endblock %}

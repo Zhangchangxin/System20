@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="/course.css" />
+{% endblock %}
+
+<!--  -->
+{% block page_content %}
+<div class="paper">
+    <div class="paper-head">
+       
+        <div id="new-btn" class="btn" >新建学期课程教学计划</div>
+    </div>
+    <div class="paper-body">
+        <table id="course-table" class="table">
+            <thead>
+                <tr>
+                    <th class="col-cou_term">学期</th>
+                    
+                    <th class="col-cou_name">课程名称</th>
+                    <th class="col-place">地点</th>
+                    <th class="col-time">时间</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="course-editor dialog-background">
+        <form class="dialog">
+            <div class="dialog-head"></div>
+            <div class="dialog-body">
+
+                <input type="hidden" name="cou_sn" />
+                <div class="radio-choices">
+                    <span>
+                        2020春季学期
+                        <input type="radio" name="cou_term" value="2020春季学期" />
+                    </span>
+                    <span>
+                        2020秋季学期
+                        <input type="radio" name="cou_term" value="2020秋季学期" />
+                    </span>
+            </div >
+                
+                <label>课程名称: </label>
+                <input type="text" name="cou_name" />
+                <label>课程编号: </label>
+                <input type="text" name="cou_no" />
+            
+           <div class="dialog-body" > 
+                <label>地点: </label>
+                <input type="text" name="place" />
+                <label>时间: </label>
+                <input type="text" name="time" />
+            </div>
+            </div>
+            <div class="dialog-footer">
+                <a id="save-btn" class="btn">保存</a>
+                <a id="close-btn" class="btn">关闭</a>
+            </div>
+        </form>
+    </div>
+    <div class="comfirmation-dialog dialog-background">
+        <form class="dialog">
+            <div class="dialog-head"></div>
+            <div class="dialog-body">
+                <div id="message"></div>
+            </div>
+            <div class="dialog-footer">
+                <a id="ok-btn" class="btn">确定</a>
+                <a id="cancel-btn" class="btn">放弃</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/course.js"></script>
+{% endblock %}

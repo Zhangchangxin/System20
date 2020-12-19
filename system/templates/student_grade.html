@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block styles %}
+<link href="/student_grade.css" rel="stylesheet" />
+{% endblock %} {% block page_content %}
+<div class="paper">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>课程</th>
+                <th>成绩</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.stu_name }}</td>
+                <td>{{ item.cou_name }}</td>
+                <td>{{ item.grade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

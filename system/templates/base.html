@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>成绩管理</title>
+        <link rel="stylesheet" href="/contrib/animate_4_1_1.min.css" />
+        <link href="/components.css" rel="stylesheet" />
+        <link href="/base.css" rel="stylesheet" />
+        {% block styles %}{% endblock%}
+        <script>
+            function checkActive(el) {
+                console.log(1111, el.href);
+                return document.location.pathname.startsWith(el.href);
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="page-head">
+            <img class="logo" src="/logo_256.png" />
+            <div class="title">成绩管理系统</div>
+        </div>
+        <div class="page-body">
+            <div class="sidebar">
+                <ul>
+                    <li {% if location.pathname.startswith("/student") %}active{% endif %}>
+                        <a href="/student">学生</a>
+                    </li>
+                    <li {% if location.pathname.startswith("/course") %}active{% endif %}>
+                        <a href="/course">课程</a>
+                    </li>
+                    <li {% if location.pathname.startswith("/course-select") %}active{% endif %}>
+                        <a href="/course-select">选课</a>
+                    </li>
+                    <li {% if location.pathname.startswith("/grade") %}active{% endif %}>
+                        <a href="/grade">成绩单</a>
+                    </li>
+                    <li {% if location.pathname.startswith("/personal") %}active{% endif %}>
+                        <a href="/personal">个人成绩</a>
+                    </li>
+                   
+                </ul>
+            </div>
+            <div class="page-content">
+                {% block page_content %}{% endblock %}
+                <div class="page-footer">&copy;天津工业大学 2020</div>
+            </div>
+        </div>
+    </body>
+</html>

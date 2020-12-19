@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="/student_list.css" />
+{% endblock %}
+
+<!--  -->
+{% block page_content %}
+<div class="paper">
+    <div class="paper-head">
+        <div id="new-btn" class="btn">新建学生记录</div>
+    </div>
+    <div class="paper-body">
+        <table id="student-table" class="table">
+            <thead>
+                <tr>
+                    <th class="col-stu_name">姓名</th>
+                    <th class="col-stu_no">学号</th>
+                    <th class="col-gender">性别</th>
+                    <th class="col-enrolled">入学时间</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="student-editor dialog-background">
+        <form class="dialog">
+            <div class="dialog-head"></div>
+            <div class="dialog-body">
+                <input type="hidden" name="stu_sn" />
+                <label>学号: </label>
+                <input type="text" name="stu_no" />
+                <label>性别: </label>
+                <div class="radio-choices">
+                    <span>
+                        男
+                        <input type="radio" name="gender" value="m" />
+                    </span>
+                    <span>
+                        女
+                        <input type="radio" name="gender" value="f" />
+                    </span>
+                </div>
+                <label>姓名: </label>
+                <input type="text" name="stu_name" />
+                <label>入学时间: </label>
+                <input type="text" name="enrolled" />
+            </div>
+            <div class="dialog-footer">
+                <a id="save-btn" class="btn">保存</a>
+                <a id="close-btn" class="btn">关闭</a>
+            </div>
+        </form>
+    </div>
+    <div class="comfirmation-dialog dialog-background">
+        <form class="dialog">
+            <div class="dialog-head"></div>
+            <div class="dialog-body">
+                <div id="message"></div>
+            </div>
+            <div class="dialog-footer">
+                <a id="ok-btn" class="btn">确定</a>
+                <a id="cancel-btn" class="btn">放弃</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/student.js"></script>
+{% endblock %}
